@@ -1,8 +1,8 @@
-# Project 2 - *Name of App Here*
+# Project 2 - *Simple Tweeter*
 
-**Name of your app** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
+**Simple Tweeter** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
@@ -40,7 +40,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had issues with getting a Twitter API key. I also had issues with testing the app with the 11 API call limit set by the Twitter API, especially after trying to test the limits of infinite scroll(the limit being the number of API calls).
 
 ## Open-source libraries used
 
