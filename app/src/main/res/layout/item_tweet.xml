@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:background="@android:color/background_dark">
 
     <ImageView
         android:id="@+id/ivProfileImage"
@@ -34,5 +35,16 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:autoLink="all"
+        android:linksClickable="true"
         tools:text="Road work ahead? Yeah, I sure hope it does!" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        tools:text="10-20-34" />
 </RelativeLayout>

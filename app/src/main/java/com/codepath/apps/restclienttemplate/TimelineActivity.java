@@ -1,10 +1,14 @@
 package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,11 +29,12 @@ public class TimelineActivity extends AppCompatActivity {
 
     TwitterClient client;
     RecyclerView rvTweets;
+    DividerItemDecoration dividerItemDecoration;
     List<Tweet> tweets;
     TweetsAdapter adapter;
     SwipeRefreshLayout swipeContainer;
-    EndlessRecyclerViewScrollListener scrollListener;
 
+    EndlessRecyclerViewScrollListener scrollListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,7 @@ public class TimelineActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
 
         swipeContainer = findViewById(R.id.swipeContainer);
-        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright);
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_light);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -52,6 +57,11 @@ public class TimelineActivity extends AppCompatActivity {
         adapter = new TweetsAdapter(this,tweets);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvTweets.setLayoutManager(layoutManager);
+
+        dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        rvTweets.addItemDecoration(dividerItemDecoration);
+
         rvTweets.setAdapter(adapter);
 
         scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
