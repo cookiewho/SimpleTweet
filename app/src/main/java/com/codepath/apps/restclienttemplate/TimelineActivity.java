@@ -104,15 +104,6 @@ public class TimelineActivity extends AppCompatActivity {
             }
         });
         populateHomeTimeline();
-
-//        ImageButton imageButton = findViewById(R.id.compose);
-//        imageButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
-//                startActivityForResult(intent, REQUEST_CODE);
-//            }
-//        });
     }
 
     private void loadMoreData() {
