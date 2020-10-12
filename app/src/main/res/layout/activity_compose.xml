@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComposeActivity"
-    android:background="@android:color/black">
+    android:background="@android:color/black"
+    tools:context=".ComposeActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TILCompose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="0dp"
         app:counterEnabled="true"
-        android:layout_marginTop="5dp"
         app:counterTextColor="@android:color/holo_blue_light">
 
         <EditText
@@ -31,7 +38,7 @@
             android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,5 +46,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:text="tweet" />
+        android:background="@drawable/vector_compose_shortcut"
+        android:clickable="true"
+        tools:src="@drawable/vector_compose_shortcut" />
 </RelativeLayout>

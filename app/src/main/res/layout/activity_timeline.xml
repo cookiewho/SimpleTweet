@@ -5,12 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TimelineActivity"
-    android:background="@android:color/background_dark">
-    
+    android:background="@android:color/black">
+
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                app:srcCompat="@drawable/ic_logo_small" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="0dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTweets"

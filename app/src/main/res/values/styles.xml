@@ -1,21 +1,19 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
-
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">#1da1f2</item>
+        <item name="popupTheme">@style/Theme.AppCompat.Light</item>
     </style>
-
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="colorPrimary">#1da1f2</item>
         <item name="colorPrimaryDark">#ff1370a9</item>
         <item name="colorAccent">#ff1da1f2</item>
         <item name="android:textColor">#ffffff</item>
+        <item name="android:textColorHint">#D6D6D6</item>
+        <item name="toolbarStyle">@style/Toolbar</item>
+
     </style>
 
 </resources>
